@@ -212,6 +212,8 @@ This plot displays:
 source("run_MZL_pipeline.R")
 ```
 
+Note: alternatively, the code can also be run piecemeal in the RStudios
+
 4. View outputs in the working directory.
 
 ---
