@@ -262,3 +262,11 @@ This pipeline provides a **fully automated**, **platform-aware**, and **memory-e
 Perfect for biomarker discovery and cross-study expression meta-analysis.
 
 ---
+
+## Authors
+- Fahad S. Ahmed, MD – Pipeline design and implementation
+
+## Contact
+For questions or issues, please open a GitHub issue or contact: @FahadSAhmed
+
+---
