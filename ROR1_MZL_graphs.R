@@ -1,11 +1,12 @@
 # ================================
 # GEO MZL → GPL-aware normalize → Single Excel (streamed) → ROR1 plot
-# Base dir: C:/Users/AHMEDF1/Downloads/ROR1_CLL_MZL
+# Base dir: C:/Users/NAME/Downloads/MZL
 # Sheets: one per MZL GSE block + ROR1_MZL summary
+# Author: Fahad S. Ahmed, MD
 # ================================
 
 # ---- Config paths ----
-base_dir  <- "C:/Users/AHMEDF1/Downloads/ROR1_CLL_MZL"
+base_dir  <- "C:/Users/NAME/Downloads/MZL"
 cache_dir <- file.path(base_dir, "cache")   # GEO download cache
 rds_dir   <- file.path(base_dir, "rds")     # per-GSE normalized matrices on disk
 dir.create(base_dir,  showWarnings = FALSE, recursive = TRUE)
@@ -428,3 +429,4 @@ message("Outputs:\n",
         " - Plot: ", plot_mzl, "\n",
         " - Log: ", log_path, "\n",
         " - Per-GSE RDS (normalized): ", file.path(base_dir, "rds"))
+
