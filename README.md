@@ -264,9 +264,12 @@ Perfect for biomarker discovery and cross-study expression meta-analysis.
 ---
 
 ## Author
-- Fahad S. Ahmed, MD – Pipeline design and implementation
+Fahad S. Ahmed, MD – Pipeline design and implementation
 
 ## Contact
 For questions or issues, please open a GitHub issue or contact: @FahadSAhmed
+
+## Citation
+Ahmed FS. Marginal-Zone Lymphoma NCBI GEO Sample Extraction [R Language]. GitHub repository. Published 2025. Accessed [2025 Nov 13]. Available at: https://github.com/FahadSAhmed/Marginal-Zone-Lymphoma-NCBI-GEO-Sample-Extraction
 
 ---
