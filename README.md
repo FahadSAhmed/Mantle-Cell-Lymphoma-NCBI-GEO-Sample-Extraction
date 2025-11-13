@@ -11,7 +11,7 @@ The workflow is designed to handle heterogeneous data platforms, avoid high-memo
 Given a text file listing GEO series identifiers (e.g., *gds_result_MZL.txt* produced from GEO DataSets; step 0 is a manual process), the script performs:
 
 0. **Producing the gsd_list_MZL.txt**
-   - Go to "https://www.ncbi.nlm.nih.gov/gds" and search for "mantle cell lymphoma" in the search bar
+   - Go to "https://www.ncbi.nlm.nih.gov/gds" and search for "Marginal Zone lymphoma" in the search bar
    - Saving the list to file "gds_list_MZL.txt"
       
 2. **GSE Extraction**
