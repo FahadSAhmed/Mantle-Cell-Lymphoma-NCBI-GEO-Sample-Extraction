@@ -1,5 +1,5 @@
 
-# **MZL ROR1 Meta-Analysis Pipeline**
+# **MZL ROR1 Analysis Pipeline**
 
 This repository contains a complete R pipeline for **systematic retrieval, normalization, and aggregation of Marginal Zone Lymphoma (MZL) gene-expression datasets** from NCBI GEO, with a specific focus on **ROR1** expression across studies.  
 The workflow is designed to handle heterogeneous data platforms, avoid high-memory operations, and generate unified outputs suitable for downstream analysis.
