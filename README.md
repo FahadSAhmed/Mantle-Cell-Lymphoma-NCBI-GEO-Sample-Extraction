@@ -66,3 +66,88 @@ Place this file in the configured base directory, e.g.:
 ```r
 base_dir  <- "C:/Users/USERNAME/Downloads/ROR1_CLL_MZL"
 infile_mzl <- file.path(base_dir, "gds_result_MZL.txt")
+
+Outputs
+
+All outputs are written under base_dir:
+
+Excel workbook
+
+MZL_merged.xlsx
+
+One sheet per MZL GSE block: MZL_<GSE>_<index>
+
+Summary sheet: ROR1_MZL with columns:
+
+Block (GSE block ID)
+
+GSE (series accession)
+
+GSM (sample accession)
+
+ROR1 (normalized expression)
+
+Plots
+
+ROR1_expression_MZL.png
+Violin + box + jitter plot of ROR1 across all retained MZL samples.
+
+Log
+
+run_log_MZL.txt
+Text log capturing GSE processing, platform detection, filtering decisions, and any warnings.
+
+Per-GSE normalized matrices (RDS)
+
+rds/<GSE>_<index>.rds
+Each RDS contains a list with:
+
+expr: gene-level normalized expression matrix (genes × samples)
+
+meta: corresponding sample-level metadata (phenotype)
+
+Usage
+
+Export or construct gds_result_MZL.txt from NCBI GEO (searching for MZL / marginal zone lymphoma).
+
+Adjust base_dir in the script to your desired working directory.
+
+Run the R script:
+
+source("run_MZL_pipeline.R")
+
+
+Inspect outputs:
+
+Open MZL_merged.xlsx in Excel or R for cross-study expression review.
+
+Review ROR1_expression_MZL.png for a global view of ROR1 expression.
+
+Check run_log_MZL.txt for any datasets skipped due to missing data or annotation.
+
+Customization
+
+Gene whitelist
+
+To restrict output matrices (e.g. to a focused biomarker panel), set:
+
+GENE_WHITELIST <- c("ROR1","MS4A1","CD19","CD79B","BTK","PAX5")
+
+
+Only these genes (if present) will be retained per GSE block and written to Excel.
+
+Phenotype filters
+
+The MZL classifier is implemented in is_MZL() and uses free-text pattern matching. This function can be refined if specific subtypes or exclusion criteria are needed.
+
+Normalization behavior
+
+Platform→normalization mapping is encapsulated in normalize_platform_matrix(). This can be modified if a different normalization strategy is preferred for a given platform class.
+
+Caveats
+
+The disease classification relies on GEO phenotype text; misannotated series may be included or excluded.
+
+ROR1 detection depends on correct gene symbol mapping through GPL annotation; incomplete or non-standard annotations may lead to missing ROR1 values for some platforms.
+
+The script assumes that series matrix files contain expression data (not raw CEL/IDAT files).
