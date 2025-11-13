@@ -12,7 +12,7 @@ Given a text file listing GEO series identifiers (e.g., *gds_result_MZL.txt* pro
 
 0. **Producing the gsd_list_MZL.txt**
    - Go to "https://www.ncbi.nlm.nih.gov/gds" and search for "mantle cell lymphoma" in the search bar
-   - Saving the list to file "gsd_list_MZL.txt"
+   - Saving the list to file "gds_list_MZL.txt"
       
 2. **GSE Extraction**
    - Reads GEO search results and extracts all valid GSE accessions.
