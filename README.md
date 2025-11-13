@@ -263,7 +263,7 @@ Perfect for biomarker discovery and cross-study expression meta-analysis.
 
 ---
 
-## Authors
+## Author
 - Fahad S. Ahmed, MD – Pipeline design and implementation
 
 ## Contact
