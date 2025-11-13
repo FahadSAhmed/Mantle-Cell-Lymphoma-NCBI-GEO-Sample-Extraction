@@ -8,20 +8,24 @@ The workflow is designed to handle heterogeneous data platforms, avoid high-memo
 
 ## **📌 Pipeline Summary**
 
-Given a text file listing GEO series identifiers (e.g., *gds_result_MZL.txt* produced from GEO DataSets), the script performs:
+Given a text file listing GEO series identifiers (e.g., *gds_result_MZL.txt* produced from GEO DataSets; step 0 is a manual process), the script performs:
 
-1. **GSE Extraction**
+0. **Producing the gsd_list_MZL.txt**
+   - Go to "https://www.ncbi.nlm.nih.gov/gds" and search for "mantle cell lymphoma" in the search bar
+   - Saving the list to file "gsd_list_MZL.txt"
+      
+2. **GSE Extraction**
    - Reads GEO search results and extracts all valid GSE accessions.
 
-2. **Automated GEO Downloading + Caching**
+3. **Automated GEO Downloading + Caching**
    - Downloads *Series Matrix* files only once.
    - Reuses previously downloaded versions to reduce run-time and bandwidth.
 
-3. **MZL Sample Filtering**
+4. **MZL Sample Filtering**
    - Identifies MZL disease samples using robust text-based phenotype parsing.
    - Removes cell-line or immortalized samples.
 
-4. **Platform-Aware Normalization**
+5. **Platform-Aware Normalization**
    - Automatically detects GPL platform → maps to appropriate normalization:
      - Affymetrix → log2 + quantile normalization  
      - Illumina → log2 + quantile normalization  
@@ -30,19 +34,19 @@ Given a text file listing GEO series identifiers (e.g., *gds_result_MZL.txt* pro
      - Count-like data → edgeR TMM + logCPM  
      - Unknown → safe fallback normalization
 
-5. **Gene-Level Aggregation**
+6. **Gene-Level Aggregation**
    - Collapses probes → genes using GPL annotations (`Gene.symbol`, `SYMBOL`, etc.).
    - Averages probes mapping to the same gene.
 
-6. **Streaming-Based Data Handling**
+7. **Streaming-Based Data Handling**
    - Each normalized GSE block is written as a separate **RDS file**.
    - Excel workbook is assembled sheet-by-sheet → avoids multi-GB memory use.
 
-7. **ROR1 Summary Extraction**
+8. **ROR1 Summary Extraction**
    - Extracts ROR1 expression for each sample.
    - Builds a compact summary table in Excel.
 
-8. **Plot Generation**
+9. **Plot Generation**
    - Produces a violin + box + jitter plot of ROR1 expression across all MZL samples.
 
 ---
